@@ -7,5 +7,12 @@ services:
     env_file: .env
     networks:
       - freecodecamp
+  test-db:
+    image: postgres:13
+    ports:
+      - 5435:5432
+    env_file: .env.test
+    networks:
+      - freecodecamp
 networks:
   freecodecamp:
