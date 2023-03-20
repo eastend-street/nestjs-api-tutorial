@@ -37,6 +37,30 @@ describe('App e2e', () => {
       password: '123',
     };
     describe('Signup', () => {
+      it('should throw an exception if the email is empty', () => {
+        return pactum
+          .spec()
+          .post('/auth/signup')
+          .withBody({
+            password: dto.password,
+          })
+          .expectStatus(400);
+      });
+
+      it('should throw an exception if the password is empty', () => {
+        return pactum
+          .spec()
+          .post('/auth/signup')
+          .withBody({
+            email: dto.email,
+          })
+          .expectStatus(400);
+      });
+
+      it('should throw an exception if the body is not provided', () => {
+        return pactum.spec().post('/auth/signup').expectStatus(400);
+      });
+
       it('should signup', () => {
         return pactum
           .spec()
@@ -46,6 +70,30 @@ describe('App e2e', () => {
       });
     });
     describe('Signin', () => {
+      it('should throw an exception if the email is empty', () => {
+        return pactum
+          .spec()
+          .post('/auth/signin')
+          .withBody({
+            password: dto.password,
+          })
+          .expectStatus(400);
+      });
+
+      it('should throw an exception if the password is empty', () => {
+        return pactum
+          .spec()
+          .post('/auth/signin')
+          .withBody({
+            email: dto.email,
+          })
+          .expectStatus(400);
+      });
+
+      it('should throw an exception if the body is not provided', () => {
+        return pactum.spec().post('/auth/signin').expectStatus(400);
+      });
+
       it('should signin', () => {
         return pactum
           .spec()
