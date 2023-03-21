@@ -1,4 +1,4 @@
-# NestjS bookmark API tutorial
+# NestJS bookmark API tutorial
 This is a sample application to store users and bookmarks using NestJS and Prisma.
 
 ## Tutorial
