@@ -9,6 +9,7 @@ https://www.youtube.com/watch?v=GHTA143_b-s
 - NestJS
 - TypeScript
 - Prisma
+- PostgreSQL
 - Docker
 - argon2 (To hash password)
 - class-validator (To add validation for each endpoint)
